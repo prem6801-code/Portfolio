@@ -8,7 +8,7 @@ const SKILLS = {
   Backend: ["Node.js", "Express.js", "FastAPI", "REST APIs", "Microservices"],
   Databases: ["MongoDB", "PostgreSQL", "MySQL"],
   "DevOps & Tools": ["Azure DevOps", "Git", "CI/CD", "Linux", "Databricks Apps"],
-  Security: ["JWT", "SAML SSO", "OAuth", "Passport.js"],
+  Security: ["JWT", "SAML SSO", "OAuth"],
 };
 
 const EXPERIENCE = [
@@ -20,11 +20,11 @@ const EXPERIENCE = [
     location: "Navi-Mumbai, Maharashtra",
     highlights: [
       "Built Jio Launchpad, an internet-facing centralized authorization and access management platform serving ~5,000 daily active users with role-based visibility and integrated application metadata.",
-      "Designed a workflow scheduler using MongoDB and Node.js to automate Python-based data migration scripts from Kafka, Hive, and RDBMS to ADLS, improving operational efficiency by 40%.",
-      "Developed a centralized Jio Analytics Dashboard using React and FastAPI to track job executions across multiple teams with job, failure, task-level, and historical analytics.",
-      "Optimized backend APIs with MongoDB aggregations and improved SQL queries, reducing API response time by approximately 70%.",
-      "Built a library of reusable React and Tailwind CSS components including high-performance Data Tables with server-side filtering, sorting, pagination, and editable rows.",
-      "Integrated OIAM-based authentication using SAML and Passport.js, delivering secure enterprise-compliant SSO across applications.",
+      "Designed an analytics script scheduler using MongoDB, Node.js, and Cron to automate Python-based data migration scripts, enabling seamless data movement from Kafka, Hive, and RDBMS to ADLS with real-time monitoring, improving operational efficiency by 40%.",
+      "Developed a centralized Jio Analytics Dashboard using React and FastAPI to track job executions across multiple teams through a single interface, delivering job, failure, task-level, and historical analytics with bulk data export support.",
+      "Optimized backend APIs with MongoDB aggregations and improved SQL queries; simplified database schema structure to enhance performance, reducing API response time by approximately 50%.",
+      "Built a library of reusable React and Tailwind CSS components including custom layouts, dynamic forms, and high-performance Data Tables with server-side filtering, sorting, pagination, and editable rows.",
+      "Integrated OIAM-based authentication using SAML and Passport.js, collaborating with the SAML team to deliver secure, enterprise-compliant SSO across applications.",
       "Integrated Azure DevOps REST APIs to automate repository creation, access management, pipeline executions, and deployment log monitoring.",
       "Mentored interns through onboarding, code reviews, and engineering best practices.",
     ],
@@ -36,17 +36,28 @@ const PROJECTS = [
     title: "Agro-Tech Platform",
     tech: ["React", "Node.js", "Python", "Machine Learning"],
     description:
-      "B2B & C2C e-commerce platform for agricultural products enabling seamless transactions. Developed and enhanced ML models for crop recommendation, prediction, and disease detection achieving 80–85% accuracy.",
+      "ML-based agriculture advisory system for crop and fertilizer recommendation using soil nutrients and environmental parameters (temperature, humidity, rainfall), achieving ~85% prediction accuracy. Implemented image-based plant disease detection with a real-time web interface for data-driven recommendations.",
     icon: "🌾",
     color: "#10b981",
   },
   {
-    title: "Face Recognition Attendance",
+    title: "Smart-Attend",
     tech: ["Python", "OpenCV", "Machine Learning"],
     description:
-      "Real-time facial recognition system detecting 5–7 faces simultaneously at 90% accuracy, integrated with a secure database for automated attendance tracking.",
+      "End-to-end facial recognition system using Python and OpenCV that identifies 5–7 faces concurrently with 90% accuracy. Features automated database logging and real-time reporting to eliminate manual attendance overhead.",
     icon: "🎯",
     color: "#6366f1",
+  },
+];
+
+const ACHIEVEMENTS = [
+  {
+    icon: "📊",
+    text: "Eliminated hours of manual job tracking by centralizing 4 Databricks workspaces into the Jio Analytics Dashboard, giving the analytics team real-time visibility from a single interface.",
+  },
+  {
+    icon: "⚡",
+    text: "Migrated legacy applications from outdated technologies to React, enabling reuse of the shared component library and standardizing the UI stack across projects.",
   },
 ];
 
@@ -259,8 +270,8 @@ function Hero() {
           fontFamily: "'Lora', serif", fontSize: "clamp(15px, 1.8vw, 17px)",
           color: "#64748b", maxWidth: 580, lineHeight: 1.8, marginBottom: 48,
         }}>
-          2+ years crafting scalable web applications with the MERN stack, Python, and FastAPI.
-          Passionate about backend optimization, clean architecture, and intuitive user experiences.
+          Building enterprise platforms at Jio Platforms serving thousands of users daily.
+          Specializing in MERN stack, Python, and FastAPI — with a focus on backend optimization, clean architecture, and intuitive user experiences.
         </p>
 
         <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
@@ -279,7 +290,7 @@ function Hero() {
             View Work
           </button>
           <a
-            href="mailto:tatkariprem6801@gmail.com"
+            href="mailto:tatkariprem08@gmail.com"
             style={{
               background: "transparent", color: "#f59e0b",
               border: "1.5px solid rgba(245,158,11,0.5)", borderRadius: 4,
@@ -292,10 +303,27 @@ function Hero() {
           >
             Contact Me
           </a>
+          <a
+            href="https://drive.google.com/file/d/1msfgULdm_w26lTZo5ZIGqXGtBp-iaIcr/view?usp=drive_link"
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              background: "transparent", color: "#94a3b8",
+              border: "1.5px solid rgba(148,163,184,0.25)", borderRadius: 4,
+              padding: "14px 32px", fontFamily: "'DM Mono', monospace",
+              fontSize: 13, fontWeight: 700, letterSpacing: 2, textTransform: "uppercase",
+              textDecoration: "none", transition: "all 0.3s", display: "inline-flex",
+              alignItems: "center", gap: 8,
+            }}
+            onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(148,163,184,0.6)"; e.currentTarget.style.color = "#f1f5f9"; }}
+            onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(148,163,184,0.25)"; e.currentTarget.style.color = "#94a3b8"; }}
+          >
+            <span style={{ fontSize: 15 }}>↓</span> Resume
+          </a>
         </div>
 
         <div style={{ display: "flex", gap: 32, marginTop: 72, paddingTop: 32, borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-          {[["2+", "Years Experience"], ["5K+", "Daily Active Users"], ["70%", "API Speedup"]].map(([num, label]) => (
+          {[["10+", "Features Shipped at Jio"], ["40%", "Ops Efficiency Gain"], ["2", "End-to-End Apps Built"]].map(([num, label]) => (
             <div key={label}>
               <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 36, fontWeight: 700, color: "#f59e0b" }}>{num}</div>
               <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, color: "#64748b", letterSpacing: 1.5, textTransform: "uppercase", marginTop: 4 }}>{label}</div>
@@ -380,6 +408,26 @@ function Experience() {
             </div>
           </FadeIn>
         ))}
+
+        {/* Achievements */}
+        <FadeIn delay={0.2}>
+          <div style={{ marginTop: 40 }}>
+            <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, letterSpacing: 3, color: "#f59e0b", textTransform: "uppercase", marginBottom: 20 }}>
+              Key Achievements
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 20 }}>
+              {ACHIEVEMENTS.map((a, i) => (
+                <div key={i} style={{
+                  border: "1px solid rgba(245,158,11,0.12)", borderRadius: 10, padding: "24px 28px",
+                  background: "rgba(245,158,11,0.02)", display: "flex", gap: 16, alignItems: "flex-start",
+                }}>
+                  <span style={{ fontSize: 22, flexShrink: 0 }}>{a.icon}</span>
+                  <p style={{ fontFamily: "'Lora', serif", fontSize: 14, color: "#94a3b8", lineHeight: 1.7 }}>{a.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );
@@ -478,7 +526,10 @@ function Skills() {
             </div>
             <div style={{ border: "1px solid rgba(99,102,241,0.2)", borderRadius: 10, padding: "28px 28px", background: "rgba(99,102,241,0.03)" }}>
               <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, letterSpacing: 2.5, color: "#6366f1", textTransform: "uppercase", marginBottom: 16 }}>Certifications</div>
-              {[["Software Development Training", "Q Spiders · Oct–Dec 2023 · Java, J2EE, SQL, MySQL"], ["React Basics Certificate", "Meta via Coursera · 2023 · React, Hooks, Component Architecture"]].map(([title, sub]) => (
+              {[
+                ["Software Development Training", "Q Spiders · Oct–Dec 2023 · Java, J2EE, SQL, MySQL"],
+                ["React Basics Certificate", "Meta via Coursera · 2023 · React, Hooks, Component Architecture"]
+              ].map(([title, sub]) => (
                 <div key={title} style={{ marginBottom: 14 }}>
                   <div style={{ fontFamily: "'Lora', serif", fontSize: 15, color: "#f1f5f9", fontWeight: 500 }}>{title}</div>
                   <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, color: "#64748b", marginTop: 3 }}>{sub}</div>
@@ -493,63 +544,49 @@ function Skills() {
 }
 
 function Contact() {
-  // const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // TODO: Integrate with backend (FastAPI / EmailJS / Formspree)
-    // setSubmitted(true);
-  };
-
   return (
     <section id="contact" style={{ padding: "110px 5% 80px", background: "linear-gradient(180deg, #080a14 0%, #060810 100%)" }}>
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         <SectionHeader label="Get In Touch" title="Let's Work Together" />
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 56 }} className="contact-grid">
-          <FadeIn delay={0.1}>
-            <div>
-              <p style={{ fontFamily: "'Lora', serif", fontSize: 16, color: "#64748b", lineHeight: 1.8, marginBottom: 40 }}>
-                I'm currently open to new opportunities. Whether you have a project in mind or just want to connect — my inbox is always open.
-              </p>
-              {[
-                ["📧", "Email", "tatkariprem6801@gmail.com", "mailto:tatkariprem6801@gmail.com"],
-                ["📱", "Phone", "+91 8806828892", "tel:+918806828892"],
-                ["💼", "LinkedIn", "linkedin.com/prem-tatkari", "https://linkedin.com/prem-tatkari"],
-                ["🐙", "GitHub", "github.com/prem6801-code", "https://github.com/prem6801-code"],
-              ].map(([icon, label, value, href]) => (
-                <a key={label} href={href} target="_blank" rel="noreferrer" style={{
-                  display: "flex", alignItems: "center", gap: 14, marginBottom: 18,
-                  textDecoration: "none",
-                  padding: "12px 16px", borderRadius: 8,
-                  border: "1px solid transparent",
-                  transition: "all 0.3s",
-                }}
-                  onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(245,158,11,0.25)"; e.currentTarget.style.background = "rgba(245,158,11,0.04)"; }}
-                  onMouseLeave={e => { e.currentTarget.style.borderColor = "transparent"; e.currentTarget.style.background = "transparent"; }}
-                >
-                  <span style={{ fontSize: 18 }}>{icon}</span>
-                  <div>
-                    <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, letterSpacing: 2, color: "#f59e0b", textTransform: "uppercase" }}>{label}</div>
-                    <div style={{ fontFamily: "'Lora', serif", fontSize: 14, color: "#94a3b8", marginTop: 2 }}>{value}</div>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </FadeIn>
+        <FadeIn delay={0.05}>
+          <p style={{ fontFamily: "'Lora', serif", fontSize: 16, color: "#64748b", lineHeight: 1.8, marginBottom: 48, maxWidth: 560 }}>
+            I'm currently open to new opportunities. Whether you have a project in mind or just want to connect — my inbox is always open.
+          </p>
+        </FadeIn>
 
-          {/* FORM HIDDEN - Uncomment below + backend integration to re-enable */}
-          {/* <FadeIn delay={0.2}>
-            <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-              ... Name, Email, Message fields + Send button ...
-            </form>
-          </FadeIn> */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
+          {[
+            ["📧", "Email", "tatkariprem08@gmail.com", "mailto:tatkariprem08@gmail.com"],
+            ["📱", "Phone", "+91 8806828892", "tel:+918806828892"],
+            ["💼", "LinkedIn", "linkedin.com/in/prem-tatkari", "https://linkedin.com/in/prem-tatkari"],
+            ["🐙", "GitHub", "github.com/prem6801-code", "https://github.com/prem6801-code"],
+          ].map(([icon, label, value, href], i) => (
+            <FadeIn key={label} delay={i * 0.08}>
+              <a href={href} target="_blank" rel="noreferrer" style={{
+                display: "flex", alignItems: "center", gap: 16,
+                textDecoration: "none",
+                padding: "20px 24px", borderRadius: 10,
+                border: "1px solid rgba(255,255,255,0.06)",
+                background: "rgba(255,255,255,0.015)",
+                transition: "all 0.3s",
+              }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(245,158,11,0.3)"; e.currentTarget.style.background = "rgba(245,158,11,0.04)"; e.currentTarget.style.transform = "translateY(-3px)"; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.06)"; e.currentTarget.style.background = "rgba(255,255,255,0.015)"; e.currentTarget.style.transform = "translateY(0)"; }}
+              >
+                <span style={{ fontSize: 24, flexShrink: 0 }}>{icon}</span>
+                <div>
+                  <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, letterSpacing: 2, color: "#f59e0b", textTransform: "uppercase", marginBottom: 4 }}>{label}</div>
+                  <div style={{ fontFamily: "'Lora', serif", fontSize: 14, color: "#94a3b8" }}>{value}</div>
+                </div>
+              </a>
+            </FadeIn>
+          ))}
         </div>
       </div>
 
       <div style={{ maxWidth: 1200, margin: "80px auto 0", paddingTop: 32, borderTop: "1px solid rgba(255,255,255,0.06)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
-        <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, color: "#334155" }}>© 2024 Prem Tatkari. Built with React + Tailwind.</span>
+        <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, color: "#334155" }}>© 2025 Prem Tatkari. Built with React + Tailwind.</span>
         <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 12, color: "#334155" }}>Thane, Maharashtra · India</span>
       </div>
 
